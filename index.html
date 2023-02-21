@@ -193,7 +193,36 @@
                     </div>
                 </div>
             </div>
-
-        </div>      
+              <!-- contact us -->
+            <div class="contect">
+                <div class="container">
+                    <div class="row"  id="contect">
+                        <div class="col">
+                            <h5 class="card-title">Contect Us</h5><br>
+                            <form method="POST" name="google-sheet" >
+                                <h6>Enter name :- &nbsp;<input type="name" name="Name" id="" placeholder="Enter name ..."></h6> 
+                                <h6>Email Id :- &nbsp;<input type="email" name="Email" id="" placeholder="Enter your email.."></h6> 
+                                <h6>Contect no. :- &nbsp;<input type="name" name="Mobile" id="" placeholder="Contect no..."></h6>  
+                                <p><h6>Message :- <input type="text" name="Massage" id="Massage" placeholder="Enter some massage...."></h6></p>
+                                <button type="submit" class="btn btn-success" name="submit">Submit</button><br><p>&nbsp;</p>
+                            </form>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div> 
+    
+         
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwdRtQ7D1VqGkOCeG38TRYMvW8SXGm_oxOiJTp6fZFEXQwfQyNykhJkweI-_iAo_wj_eQ/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
     </body>
 </html>
